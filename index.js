@@ -26,6 +26,8 @@ app.use(express.urlencoded({extended:false}));
 
 app.get('/data/login/:mobileno', (req, res) => {
     pool.getConnection((errorPool, conn) => {
+
+        console.log(errorPool)
         if (errorPool) {
             res.status(500).json({
                 message: 'Something went wrong!'
